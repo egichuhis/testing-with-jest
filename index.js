@@ -28,6 +28,13 @@ const calculator = {
   multiply: (a, b) => a * b,
 };
 
+function capitalize(string) {
+  const arrString = string.split('');
+  arrString[0] = arrString[0].toUpperCase();
+  return arrString.join('');
+}
+
 exports.stringLength = stringLength;
 exports.reverseString = reverseString;
 exports.calculator = calculator;
+exports.capitalize = capitalize;

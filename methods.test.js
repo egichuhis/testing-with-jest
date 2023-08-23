@@ -1,4 +1,6 @@
-const { stringLength, reverseString, calculator } = require('./index.js');
+const {
+  stringLength, reverseString, calculator, capitalize,
+} = require('./index.js');
 
 describe('Testing strings', () => {
   test('stringLength should throw an error for strings with less than 1 character', () => {
@@ -87,5 +89,12 @@ describe('Calculator', () => {
       const result = calculator.multiply(10, -5);
       expect(result).toBe(-50);
     });
+  });
+});
+
+describe('Other string tests', () => {
+  test('String first character should be capitalized', () => {
+    const result = capitalize('edwingich');
+    expect(result).toBe('Edwingich');
   });
 });
