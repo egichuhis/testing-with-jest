@@ -68,14 +68,24 @@ describe('Calculator', () => {
     test('division by zero should throw an error', () => {
       expect(() => {
         calculator.divide(10, 0);
-      }).toThrow('Cannot divide by zero');
+      }).toThrowError('Cannot divide by zero');
     });
   });
 
   describe('Multiplication', () => {
-    test('multiplication of two numbers', () => {
+    test('multiplication of positive numbers', () => {
       const result = calculator.multiply(10, 5);
       expect(result).toBe(50);
+    });
+
+    test('multiplication of negative numbers', () => {
+      const result = calculator.multiply(-10, -5);
+      expect(result).toBe(50);
+    });
+
+    test('multiplication of positive and negative numbers', () => {
+      const result = calculator.multiply(10, -5);
+      expect(result).toBe(-50);
     });
   });
 });
